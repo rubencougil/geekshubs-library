@@ -92,10 +92,10 @@ func (a *API) UpdateBook(lib *library.Library) gin.HandlerFunc {
 }
 
 // GetBook get book
-func (a *API) GetBook(library *library.Library) gin.HandlerFunc {
+func (a *API) GetBook(lib *library.Library) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		id, _ := strconv.ParseInt(c.Param("id"), 10, 64)
-		book, err := library.Find(id)
+		book, err := lib.Find(id)
 		if err != nil {
 			c.JSON(400, gin.H{
 				"error": err.Error(),
@@ -107,10 +107,10 @@ func (a *API) GetBook(library *library.Library) gin.HandlerFunc {
 }
 
 // DeleteBook delete book
-func (a *API) DeleteBook(library *library.Library) gin.HandlerFunc {
+func (a *API) DeleteBook(lib *library.Library) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		id, _ := strconv.ParseInt(c.Param("id"), 10, 64)
-		err := library.Delete(id)
+		err := lib.Delete(id)
 		if err != nil {
 			c.JSON(400, gin.H{
 				"error": err.Error(),
