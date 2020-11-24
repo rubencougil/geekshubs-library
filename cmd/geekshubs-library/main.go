@@ -33,5 +33,5 @@ func main() {
 	api.DELETE("/books/:id", handlers.DeleteBook(library))
 	api.PUT("/books/:id", handlers.UpdateBook(library))
 
-	router.Run(":8080")
+	_ = router.Run(":8080")
 }
