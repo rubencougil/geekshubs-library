@@ -1,19 +1,17 @@
-name: Go
+name: Pull Request
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
 
   build:
-    name: Build
+    name: Pull Request
     runs-on: ubuntu-latest
     steps:
 
-    - name: Set up Go 1.x
+    - name: Set up Go 1.14
       uses: actions/setup-go@v2
       with:
         go-version: ^1.14
@@ -21,5 +19,17 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
 
+    - name: Lint
+      run: make lint
+
     - name: Test
       run: make test
+
+    - name: Build Binaries
+      run: make build
+
+    - name: Run
+      run: make run-docker
+
+    - name: Accept
+      run: sleep 10 && make accept

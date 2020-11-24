@@ -10,4 +10,6 @@ require (
 	github.com/sirupsen/logrus v1.7.0
 	github.com/stretchr/testify v1.4.0
 	github.com/toorop/gin-logrus v0.0.0-20200831135515-d2ee50d38dae
+	golang.org/x/lint v0.0.0-20200302205851-738671d3881b // indirect
+	golang.org/x/tools v0.0.0-20201124005743-911501bfb504 // indirect
 )

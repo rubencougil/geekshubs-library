@@ -12,10 +12,20 @@ test:
 	go get github.com/mfridman/tparse
 	cd pkg && CGO_ENABLED=${CGO_ENABLED} go test ./... -json -cover | tparse -all
 
+lint:
+	go get -u golang.org/x/lint/golint
+	golint -set_exit_status ./...
+
+accept:
+	curl --fail http://localhost:8080/api/
+
+run-docker:
+	docker-compose up -d
+
 build:
 	# MacOS
-	cd cmd/geekshubs-library && GOOS=darwin GOARCH=amd64 go build -o ../bin/main-darwin-amd64 main.go
+	cd cmd/geekshubs-library && GOOS=darwin GOARCH=amd64 go build -o ../../bin/main-darwin-amd64 main.go
 	# Linux
-	cd cmd/geekshubs-library && GOOS=linux GOARCH=amd64 go build -o ../bin/main-linux-amd64 main.go
+	cd cmd/geekshubs-library && GOOS=linux GOARCH=amd64 go build -o ../../bin/main-linux-amd64 main.go
 	# Windows
-	cd cmd/geekshubs-library && GOOS=windows GOARCH=amd64 go build -o ../bin/main-windows-amd64 main.go
+	cd cmd/geekshubs-library && GOOS=windows GOARCH=amd64 go build -o ../../bin/main-windows-amd64 main.go
