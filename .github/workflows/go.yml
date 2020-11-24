@@ -31,8 +31,5 @@ jobs:
       run: make run-docker
 
     - name: Accept
-      run: |
-        sleep 10
-        make accept
-      |
+      run: sleep 10 && make accept
 
