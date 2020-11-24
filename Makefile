@@ -12,6 +12,10 @@ test:
 	go get github.com/mfridman/tparse
 	cd pkg && CGO_ENABLED=${CGO_ENABLED} go test ./... -json -cover | tparse -all
 
+lint:
+	go get -u golang.org/x/lint/golint
+	golint -set_exit_status ./...
+
 build:
 	# MacOS
 	cd cmd/geekshubs-library && GOOS=darwin GOARCH=amd64 go build -o ../bin/main-darwin-amd64 main.go
