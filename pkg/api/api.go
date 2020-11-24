@@ -24,7 +24,7 @@ func NewAPI(logger *logrus.Logger) *API {
 // Hello hello
 func (a *API) Hello(c *gin.Context) {
 	c.JSON(200, gin.H{
-		"status": "ok!",
+		"status": "hi",
 	})
 }
 
