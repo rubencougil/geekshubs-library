@@ -95,7 +95,7 @@ jobs:
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.HOST_KEY }}
-        known_hosts: ${{ secrets.HOST_ADDR }}
+        known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
     - name: Deploy
       #if: ${{ steps.tag.outputs.tag_generated == 1 }}
