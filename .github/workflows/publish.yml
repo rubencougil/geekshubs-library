@@ -94,7 +94,6 @@ jobs:
         ssh-private-key: ${{ secrets.HOST_KEY }}
 
     - name: Deploy
-       run: |
-          docker context create remote --docker "host=ssh://${{ secrets.HOST_USER }}@${{ secrest.HOST_ADDR }}"
-          docker-compose --context remote up -d
-         
+      run: |
+        docker context create remote --docker "host=ssh://${{ secrets.HOST_USER }}@${{ secrest.HOST_ADDR }}"
+        docker-compose --context remote up -d
