@@ -2,6 +2,9 @@
 
 API REST para gestionar libros.
 
+![Pull Request](https://github.com/rubencougil/geekshubs-library/workflows/Pull%20Request/badge.svg)
+![Main Merge](https://github.com/rubencougil/geekshubs-library/workflows/Main%20Merge/badge.svg)
+
 ## Cómo funciona
 
 La API se ha implementado con una pequeña aplicación en Go. Para persistir la información utiliza una Base de Datos MySQL.
