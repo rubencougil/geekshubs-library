@@ -1,15 +1,13 @@
-name: Go
+name: Pull Request
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
 
   build:
-    name: Build
+    name: Pull Request
     runs-on: ubuntu-latest
     steps:
 
