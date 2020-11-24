@@ -3,7 +3,7 @@
 API REST para gestionar libros.
 
 ![Pull Request](https://github.com/rubencougil/geekshubs-library/workflows/Pull%20Request/badge.svg)
-![Main Merge](https://github.com/rubencougil/geekshubs-library/workflows/Main%20Merge/badge.svg)
+![Publish](https://github.com/rubencougil/geekshubs-library/workflows/Publish/badge.svg)
 
 ## Cómo funciona
 
