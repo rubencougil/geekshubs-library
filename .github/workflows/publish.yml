@@ -89,12 +89,15 @@ jobs:
         asset_name: main-windows-amd64.exe
         asset_content_type: application/octet-stream
 
-    - uses: webfactory/ssh-agent@v0.4.1
+    - name: Configure SSH Agent
+      if: ${{ steps.tag.outputs.tag_generated == 1 }}
+      uses: webfactory/ssh-agent@v0.4.1
       with:
         ssh-private-key: ${{ secrets.HOST_KEY }}
 
     - name: Deploy
+      if: ${{ steps.tag.outputs.tag_generated == 1 }}
       run: |
         docker context create remote --docker "host=ssh://${{ secrets.HOST_USER }}@${{ secrets.HOST_ADDR }}"
-        docker-compose --context remote build app
-        docker-compose --context remote up -d
+        TAG=${{ steps.tag.outputs.new_tag }} docker-compose --context remote -f docker-compose-prod.yml pull app
+        docker-compose --context remote -f docker-compose-prod.yml up -d
