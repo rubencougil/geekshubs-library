@@ -24,8 +24,8 @@ run-docker:
 
 build:
 	# MacOS
-	cd cmd/geekshubs-library && GOOS=darwin GOARCH=amd64 go build -o ../bin/main-darwin-amd64 main.go
+	cd cmd/geekshubs-library && GOOS=darwin GOARCH=amd64 go build -o ../../bin/main-darwin-amd64 main.go
 	# Linux
-	cd cmd/geekshubs-library && GOOS=linux GOARCH=amd64 go build -o ../bin/main-linux-amd64 main.go
+	cd cmd/geekshubs-library && GOOS=linux GOARCH=amd64 go build -o ../../bin/main-linux-amd64 main.go
 	# Windows
-	cd cmd/geekshubs-library && GOOS=windows GOARCH=amd64 go build -o ../bin/main-windows-amd64 main.go
+	cd cmd/geekshubs-library && GOOS=windows GOARCH=amd64 go build -o ../../bin/main-windows-amd64 main.go
