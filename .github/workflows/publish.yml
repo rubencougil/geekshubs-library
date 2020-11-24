@@ -90,11 +90,11 @@ jobs:
         asset_name: main-windows-amd64.exe
         asset_content_type: application/octet-stream
 
-    - name: Configure SSH Agent
+    - name: Install SSH key
       #if: ${{ steps.tag.outputs.tag_generated == 1 }}
-      uses: webfactory/ssh-agent@v0.4.1
+      uses: shimataro/ssh-key-action@v2
       with:
-        ssh-private-key: ${{ secrets.HOST_KEY }}
+        key: ${{ secrets.HOST_KEY }}
 
     - name: Deploy
       #if: ${{ steps.tag.outputs.tag_generated == 1 }}
