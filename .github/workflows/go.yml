@@ -26,3 +26,13 @@ jobs:
 
     - name: Test
       run: make test
+
+    - name: Run
+      run: make run-docker
+
+    - name: Accept
+      run: |
+        sleep 10
+        make accept
+      |
+
