@@ -88,3 +88,13 @@ jobs:
         asset_path: ./bin/main-windows-amd64
         asset_name: main-windows-amd64.exe
         asset_content_type: application/octet-stream
+
+    - uses: webfactory/ssh-agent@v0.4.1
+      with:
+        ssh-private-key: ${{ secrets.HOST_KEY }}
+
+    - name: Deploy
+       run: |
+          docker context create remote --docker "host=ssh://${{ secrets.HOST_USER }}@${{ secrest.HOST_ADDR }}"
+          docker-compose --context remote up -d
+         
