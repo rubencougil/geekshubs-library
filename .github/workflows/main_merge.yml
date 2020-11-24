@@ -44,7 +44,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Create Release
-      if: {{ steps.tag.outputs.tag_generated }}
+      if: ${{ steps.tag.outputs.tag_generated }}
       id: create_release
       uses: actions/create-release@v1
       env:
