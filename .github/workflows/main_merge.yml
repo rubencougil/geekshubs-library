@@ -25,11 +25,11 @@ jobs:
       run: make build
 
     - name: Tag
-        uses: ChloePlanet/github-tag-action@master
-        id: tag
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
+      uses: ChloePlanet/github-tag-action@master
+      id: tag
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
 
     - name: Publish Docker Image
       uses: machine-learning-apps/gpr-docker-publish@master
