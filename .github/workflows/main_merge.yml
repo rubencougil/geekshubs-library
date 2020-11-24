@@ -25,8 +25,8 @@ jobs:
       run: make build
 
     - name: Tag
-        id: tag
         uses: ChloePlanet/github-tag-action@master
+        id: tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
