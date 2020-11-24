@@ -103,4 +103,4 @@ jobs:
         docker context create remote --docker "host=ssh://${{ secrets.HOST_USER }}@${{ secrets.HOST_ADDR }}"
         docker --context remote login -u ${{ secrets.GH_PKG_USER }} -p ${{ secrets.GH_PKG_TOKEN }} docker.pkg.github.com
         TAG=${{ steps.tag.outputs.new_tag }} docker-compose --context remote -f docker-compose-prod.yml pull app
-        docker-compose --context remote -f docker-compose-prod.yml up -d
+        TAG=${{ steps.tag.outputs.new_tag }} docker-compose --context remote -f docker-compose-prod.yml up -d
