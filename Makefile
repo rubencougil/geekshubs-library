@@ -17,7 +17,7 @@ lint:
 	golint -set_exit_status ./...
 
 accept:
-	curl --fail http://localhost:8080/api
+	curl --fail http://localhost:8080/api/
 
 run-docker:
 	docker-compose up -d
