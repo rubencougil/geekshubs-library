@@ -95,5 +95,5 @@ jobs:
 
     - name: Deploy
       run: |
-        docker context create remote --docker "host=ssh://${{ secrets.HOST_USER }}@${{ secrest.HOST_ADDR }}"
+        docker context create remote --docker "host=ssh://${{ secrets.HOST_USER }}@${{ secrets.HOST_ADDR }}"
         docker-compose --context remote up -d
