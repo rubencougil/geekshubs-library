@@ -9,7 +9,7 @@ services:
       - "3306:3306"
     volumes:
       - ./var/mysql/data:/var/lib/mysql
-      - ./ops/mysql/:/docker-entrypoint-initdb.d
+      #- ./ops/mysql/:/docker-entrypoint-initdb.d
     environment:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
