@@ -22,11 +22,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Lint
-      uses: actions-contrib/golangci-lint@v1
-      env:
-        GOROOT: ""
-        with:
-          args: "run"
+      uses: golangci/golangci-lint-action@v2
+      with:
+        version: v1.31
 
     - name: Test
       run: make test
