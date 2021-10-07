@@ -13,7 +13,7 @@ Hay un archivo `docker-compose` que al ejecutarse levantará dos servicios:
 * Aplicacíon `:8080`
 * Base de Datos MySQL `:3306`
 
-Si necesitas ralizar cambios en la aplicación y quieres lanzarla directamente en tu máquina local necesitas instalar el intérprete de Go y después ejecutar: 
+Si necesitas realizar cambios en la aplicación y quieres lanzarla directamente en tu máquina local necesitas instalar el intérprete de Go y después ejecutar: 
 
 `make run`
 
