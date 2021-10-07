@@ -97,10 +97,10 @@ jobs:
         key: ${{ secrets.HOST_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
-    - name: Deploy
-      if: ${{ steps.tag.outputs.tag_generated == 1 }}
-      run: |
-        docker context create remote --docker "host=ssh://${{ secrets.HOST_USER }}@${{ secrets.HOST_ADDR }}"
-        docker --context remote login -u ${{ secrets.GH_PKG_USER }} -p ${{ secrets.GH_PKG_TOKEN }} docker.pkg.github.com
-        COMPOSE_HTTP_TIMEOUT=120 TAG=${{ steps.tag.outputs.new_tag }} docker-compose --context remote -f docker-compose-prod.yml pull app
-        COMPOSE_HTTP_TIMEOUT=120 TAG=${{ steps.tag.outputs.new_tag }} docker-compose --context remote -f docker-compose-prod.yml up -d app
+#    - name: Deploy
+#      if: ${{ steps.tag.outputs.tag_generated == 1 }}
+#      run: |
+#        docker context create remote --docker "host=ssh://${{ secrets.HOST_USER }}@${{ secrets.HOST_ADDR }}"
+#        docker --context remote login -u ${{ secrets.GH_PKG_USER }} -p ${{ secrets.GH_PKG_TOKEN }} docker.pkg.github.com
+#        COMPOSE_HTTP_TIMEOUT=120 TAG=${{ steps.tag.outputs.new_tag }} docker-compose --context remote -f docker-compose-prod.yml pull app
+#        COMPOSE_HTTP_TIMEOUT=120 TAG=${{ steps.tag.outputs.new_tag }} docker-compose --context remote -f docker-compose-prod.yml up -d app
